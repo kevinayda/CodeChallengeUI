@@ -1,0 +1,105 @@
+<p style="font-size: 30px">Code Challenge UI<p>
+
+<div>
+	<span>1.</span> <span style="padding-left: 10px"><button  (click)="getAllProducts()">Get All Products</button></span>
+</div>
+
+<div style="padding-top: 10px">
+	<span>2.</span><span style="padding-left: 10px">Search for Product by ID</span>
+	<input  name="productIdSearch" [(ngModel)]="productIdSearch"/>
+	<button   (click)="productSearch()">Search</button>
+</div>
+
+<div style="padding-top: 10px">
+	<span>3.</span>
+	<span style="padding-left: 10px;">Update Product</span>
+	
+	<span style="padding-left: 10px;">
+		<button  (click)="updateProduct()">Update</button>
+	</span>
+	<span style="padding-left: 10px;">Add Product</span>
+	
+	<span style="padding-left: 10px;">
+		<button  (click)="addProduct()">Add</button>
+	</span>
+</div>
+
+<div style="padding-top: 10px">
+	<label style="padding-left: 20px">Product ID</label>
+	<input name="productIdUpdate" [(ngModel)]="productIdUpdate"/>
+</div>
+<div style="padding-top: 2px">
+	<label style="padding-left: 20px">Product Description</label>
+	<input name="productDescUpdate" [(ngModel)]="productDescUpdate"/>
+</div>
+<div style="padding-top: 2px">
+	<label style="padding-left: 20px">Product Model</label>
+	<input name="productModelUpdate" [(ngModel)]="productModelUpdate"/>
+</div>
+<div style="padding-top: 2px">
+	<label style="padding-left: 20px">Product Brand</label>
+	<input name="productBrandUpdate" [(ngModel)]="productBrandUpdate"/>
+</div>
+
+<div style="padding-top: 10px">
+	<span>4.</span><span style="padding-left: 10px">Delete Product by ID</span>
+	<input  name="productIdDelete" [(ngModel)]="productIdDelete"/>
+	<button   (click)="deleteProduct()">Delete</button>
+</div>
+
+<div style="padding-top: 10px">
+	<span>5.</span>
+	<span style="padding-left: 10px;">Get All Products Filtered by (Only one filter can be used at once)</span>
+	
+	<span style="padding-left: 10px;">
+		<button  (click)="getAllProductsFilter()">Search</button>
+	</span>
+</div>
+
+<div style="padding-top: 10px">
+	<label style="padding-left: 20px">Product Description</label>
+	<input name="productDescUpdate" [(ngModel)]="productDescFilter"/>
+</div>
+<div style="padding-top: 2px">
+	<label style="padding-left: 20px">Product Model</label>
+	<input name="productModelUpdate" [(ngModel)]="productModelFilter"/>
+</div>
+<div style="padding-top: 2px">
+	<label style="padding-left: 20px">Product Brand</label>
+	<input name="productBrandUpdate" [(ngModel)]="productBrandFilter"/>
+</div>
+
+
+<div style="padding-top: 10px">
+	<table>
+		<thead>
+			<tr>
+				<th style="border: 1px solid black;">Product Id</th>
+				<th style="border: 1px solid black;">Description</th>
+				<th style="border: 1px solid black;">Model</th>
+				<th style="border: 1px solid black;">Brand</th>
+			</tr>
+		</thead>
+		<tbody *ngFor="let product of productList">
+			<td>{{product.id}}</td>
+			<td>{{product.description}}</td>
+			<td>{{product.model}}</td>
+			<td>{{product.brand}}</td>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<p> ERROR MESSAGES </p>
+	<p style="padding-top: 2px">{{errorMessage}}</p>
+</div>
+
+<div style="padding-top: 50px">
+	<p> TESTS <p>
+	<button (click)="test1()">Test 1</button>
+	<button (click)="test2()">Test 2</button>
+	<button (click)="test3()">Test 3</button>
+	<button (click)="test4()">Test 4</button>
+	<p> Test Case: {{testCase}} (200/204 is a positive result. 500 is a failed test)</p>
+	<p> Test Results: {{testResult}}</p>
+</div>
